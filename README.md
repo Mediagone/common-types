@@ -22,6 +22,13 @@ $ composer require mediagone/common-types
 
 All value objects implement a generic interface: `ValueObject`
 
+### Text
+- `Name`
+- `Slug`
+- `Text`
+- `TextMedium`
+- `Title`
+
 ### Web
 - `EmailAddress`
 - `Url`
