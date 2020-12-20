@@ -22,6 +22,9 @@ $ composer require mediagone/common-types
 
 All value objects implement a common `ValueObject` interface, `JsonSerializable` and `__toString` method. 
 
+### Crypto
+- `HashBcrypt`
+
 ### Text
 - `Name`
 - `Slug`
