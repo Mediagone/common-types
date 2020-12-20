@@ -20,7 +20,7 @@ $ composer require mediagone/common-types
 
 ## List of available Value Objects
 
-All value objects implement a generic interface: `ValueObject`
+All value objects implement a common `ValueObject` interface, `JsonSerializable` and `__toString` method. 
 
 ### Text
 - `Name`
