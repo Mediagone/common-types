@@ -24,6 +24,12 @@ final class HashBcryptTest extends TestCase
         self::assertInstanceOf(HashBcrypt::class, $hash);
     }
     
+    public function test_can_be_created_from_valid_string_with_cost() : void
+    {
+        $hash = HashBcrypt::fromString('p4ssword', 14);
+        self::assertInstanceOf(HashBcrypt::class, $hash);
+    }
+    
     
     public function test_can_be_created_from_valid_hash() : void
     {
@@ -73,7 +79,25 @@ final class HashBcryptTest extends TestCase
     
     
     //========================================================================================================
-    //
+    // String with Cost
+    //========================================================================================================
+    
+    public function test_hash_cost_cannot_be_too_low() : void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        HashBcrypt::fromString('p4ssword', 10);
+    }
+    
+    public function test_hash_cost_cannot_be_too_high() : void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        HashBcrypt::fromString('p4ssword', 31);
+    }
+    
+    
+    
+    //========================================================================================================
+    // Hash with Cost
     //========================================================================================================
     
     public function test_hash_cost_cannot_be_empty() : void
@@ -81,7 +105,6 @@ final class HashBcryptTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         HashBcrypt::fromHash('$2a$$00000000000000000000000000000000000000000000000000000');
     }
-    
     
     public function test_hash_cost_cannot_be_1_char_long() : void
     {

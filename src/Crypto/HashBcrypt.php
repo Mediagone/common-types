@@ -16,7 +16,7 @@ final class HashBcrypt implements ValueObject
     // Constants & Properties
     //========================================================================================================
     
-    public const COST = 14;
+    public const DEFAULT_COST = 14;
     
     private string $hash;
     
@@ -45,9 +45,16 @@ final class HashBcrypt implements ValueObject
     /**
      * Encrypts the given string and creates a bcrypt hash from it.
      */
-    public static function fromString(string $plainString) : self
+    public static function fromString(string $plainString, int $cost = self::DEFAULT_COST) : self
     {
-        $hash = password_hash($plainString, PASSWORD_BCRYPT, ['cost' => self::COST]);
+        if ($cost < 11) {
+            throw new InvalidArgumentException('For security reasons, Cost factor must be grater than 10 (14 recommended)');
+        }
+        if ($cost > 30) {
+            throw new InvalidArgumentException('Cost factor looks abnormally high (14 recommended, 30 max)');
+        }
+        
+        $hash = password_hash($plainString, PASSWORD_BCRYPT, ['cost' => $cost]);
         
         return new self($hash);
     }
