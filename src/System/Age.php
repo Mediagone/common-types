@@ -34,7 +34,7 @@ final class Age implements ValueObject
     }
     
     
-    public static function create(int $age) : self
+    public static function fromInt(int $age) : self
     {
         return new self($age);
     }
@@ -71,13 +71,7 @@ final class Age implements ValueObject
     }
     
     
-    public function __toString() : string
-    {
-        return (string)$this->age;
-    }
-    
-    
-    public function asInteger() : int
+    public function toInteger() : int
     {
         return $this->age;
     }

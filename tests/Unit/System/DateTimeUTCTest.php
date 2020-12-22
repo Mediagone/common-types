@@ -323,7 +323,6 @@ final class DateTimeUTCTest extends TestCase
     public function test_can_tell_if_past() : void
     {
         self::assertTrue(DateTimeUTC::yesterday()->isPast());
-        //self::assertFalse(DateTimeUTC::today()->isPast());
         self::assertFalse(DateTimeUTC::tomorrow()->isPast());
     }
     
@@ -331,7 +330,6 @@ final class DateTimeUTCTest extends TestCase
     public function test_can_tell_if_future() : void
     {
         self::assertFalse(DateTimeUTC::yesterday()->isFuture());
-        //self::assertFalse(DateTimeUTC::today()->isFuture());
         self::assertTrue(DateTimeUTC::tomorrow()->isFuture());
     }
     
@@ -509,7 +507,7 @@ final class DateTimeUTCTest extends TestCase
         $time = '2020-01-12T11:22:33+00:00';
         $utcDate = DateTimeUTC::fromFormat($time, DateTimeInterface::ATOM);
         
-        self::assertSame($time, (string)$utcDate);
+        self::assertSame($time, $utcDate->toString());
     }
     
     public function test_can_be_converted_to_timestamp() : void

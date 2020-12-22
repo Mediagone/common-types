@@ -18,7 +18,7 @@ final class CountTest extends TestCase
     
     public function test_can_be_created() : void
     {
-        self::assertInstanceOf(Count::class, Count::create(20));
+        self::assertInstanceOf(Count::class, Count::fromInt(20));
     }
     
     
@@ -29,7 +29,7 @@ final class CountTest extends TestCase
     public function test_cannot_be_created_from_invalid_value($invalidValue) : void
     {
         $this->expectException(InvalidArgumentException::class);
-        Count::create($invalidValue);
+        Count::fromInt($invalidValue);
     }
     
     public function invalidValueProvider()
@@ -47,19 +47,13 @@ final class CountTest extends TestCase
     
     public function test_can_be_converted_to_json() : void
     {
-        self::assertSame(20, Count::create(20)->jsonSerialize());
-    }
-    
-    
-    public function test_can_be_cast_to_string() : void
-    {
-        self::assertSame('20', (string)Count::create(20));
+        self::assertSame(20, Count::fromInt(20)->jsonSerialize());
     }
     
     
     public function test_can_be_cast_to_integer() : void
     {
-        self::assertSame(20, Count::create(20)->toInteger());
+        self::assertSame(20, Count::fromInt(20)->toInteger());
     }
     
     

@@ -47,15 +47,15 @@ final class DurationTest extends TestCase
     
     public function test_can_be_converted_to_json() : void
     {
-        $age = Duration::fromSeconds(20);
-        self::assertSame(20, $age->jsonSerialize());
+        $duration = Duration::fromSeconds(20);
+        self::assertSame(20, $duration->jsonSerialize());
     }
     
     
-    public function test_can_be_cast_to_string() : void
+    public function test_can_be_cast_to_integer() : void
     {
-        $age = Duration::fromSeconds(20);
-        self::assertSame('20', (string)$age);
+        $duration = Duration::fromSeconds(20);
+        self::assertSame(20, $duration->toSeconds());
     }
     
     

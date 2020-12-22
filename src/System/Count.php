@@ -34,7 +34,7 @@ final class Count implements ValueObject
     }
     
     
-    public static function create(int $count) : self
+    public static function fromInt(int $count) : self
     {
         return new self($count);
     }
@@ -68,12 +68,6 @@ final class Count implements ValueObject
     public function jsonSerialize()
     {
         return $this->count;
-    }
-    
-    
-    public function __toString() : string
-    {
-        return (string)$this->count;
     }
     
     

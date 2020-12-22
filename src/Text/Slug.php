@@ -99,7 +99,7 @@ final class Slug implements ValueObject
     }
     
     
-    public function __toString() : string
+    public function toString() : string
     {
         return $this->slug;
     }

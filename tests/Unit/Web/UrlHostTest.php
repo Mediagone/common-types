@@ -64,7 +64,7 @@ final class UrlHostTest extends TestCase
     public function test_can_be_converted_to_string() : void
     {
         $slug = UrlHost::fromString('http://domain.com');
-        self::assertSame((string)$slug, 'http://domain.com');
+        self::assertSame('http://domain.com', $slug->toString());
     }
     
     

@@ -96,7 +96,7 @@ final class TitleTest extends TestCase
     public function test_is_trimmed() : void
     {
         $name = Title::fromString(' A B C D ');
-        self::assertSame('A B C D', (string)$name);
+        self::assertSame('A B C D', $name->toString());
     }
     
     
@@ -119,7 +119,7 @@ final class TitleTest extends TestCase
         $value = 'Valid title';
         $name = Title::fromString($value);
         
-        self::assertSame($value, (string)$name);
+        self::assertSame($value, $name->toString());
     }
     
     

@@ -301,7 +301,7 @@ final class DateTimeUTC implements ValueObject
     }
     
     
-    public function __toString() : string
+    public function toString() : string
     {
         return $this->datetime->format(DateTimeInterface::ATOM);
     }

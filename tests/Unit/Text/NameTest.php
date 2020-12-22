@@ -108,7 +108,7 @@ final class NameTest extends TestCase
     public function test_is_trimmed() : void
     {
         $name = Name::fromString(' A B C D ');
-        self::assertSame('A B C D', (string)$name);
+        self::assertSame('A B C D', $name->toString());
     }
     
     
@@ -131,7 +131,7 @@ final class NameTest extends TestCase
         $value = 'Valid name';
         $name = Name::fromString($value);
         
-        self::assertSame($value, (string)$name);
+        self::assertSame($value, $name->toString());
     }
     
     

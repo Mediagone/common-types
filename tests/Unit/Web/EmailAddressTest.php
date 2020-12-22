@@ -246,7 +246,7 @@ final class EmailAddressTest extends TestCase
     public function test_email_original_string_is_trimmed() : void
     {
         $email = EmailAddress::fromString(' local@domain.com ');
-        self::assertSame('local@domain.com', (string)$email);
+        self::assertSame('local@domain.com', $email->toString());
     }
     
     
@@ -272,7 +272,7 @@ final class EmailAddressTest extends TestCase
     public function test_can_be_converted_to_string() : void
     {
         $email = EmailAddress::fromString('atom@domain.com');
-        self::assertSame('atom@domain.com', (string)$email);
+        self::assertSame('atom@domain.com', $email->toString());
     }
     
     

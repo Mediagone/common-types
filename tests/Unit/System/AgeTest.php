@@ -18,7 +18,7 @@ final class AgeTest extends TestCase
     
     public function test_can_be_created() : void
     {
-        self::assertInstanceOf(Age::class, Age::create(20));
+        self::assertInstanceOf(Age::class, Age::fromInt(20));
     }
     
     
@@ -36,7 +36,7 @@ final class AgeTest extends TestCase
     public function test_cannot_be_created_from_invalid_value($invalidValue) : void
     {
         $this->expectException(InvalidArgumentException::class);
-        Age::create($invalidValue);
+        Age::fromInt($invalidValue);
     }
     
     
@@ -47,15 +47,15 @@ final class AgeTest extends TestCase
     
     public function test_can_be_converted_to_json() : void
     {
-        $age = Age::create(20);
+        $age = Age::fromInt(20);
         self::assertSame(20, $age->jsonSerialize());
     }
     
     
-    public function test_can_be_cast_to_string() : void
+    public function test_can_be_cast_to_integer() : void
     {
-        $age = Age::create(20);
-        self::assertSame('20', (string)$age);
+        $age = Age::fromInt(20);
+        self::assertSame(20, $age->toInteger());
     }
     
     

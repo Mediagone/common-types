@@ -78,7 +78,7 @@ final class TextMediumTest extends TestCase
         $value = 'Lorem ipsum...';
         $name = TextMedium::fromString($value);
         
-        self::assertSame($value, (string)$name);
+        self::assertSame($value, $name->toString());
     }
     
     

@@ -129,7 +129,7 @@ final class UrlPathTest extends TestCase
     public function test_can_be_converted_to_string() : void
     {
         $slug = UrlPath::fromString('/some/path/to/page.html');
-        self::assertSame('/some/path/to/page.html', (string)$slug);
+        self::assertSame('/some/path/to/page.html', $slug->toString());
     }
     
     

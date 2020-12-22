@@ -110,12 +110,6 @@ final class CountryTest extends TestCase
     }
     
     
-    public function test_can_be_cast_to_string() : void
-    {
-        self::assertSame('FRA', (string)Country::fromAlpha3('FRA'));
-    }
-    
-    
     
     //========================================================================================================
     // Misc

@@ -106,7 +106,7 @@ final class EmailAddress implements ValueObject
     }
     
     
-    public function __toString() : string
+    public function toString() : string
     {
         return $this->address;
     }

@@ -189,7 +189,7 @@ final class HashBcryptTest extends TestCase
     {
         $hash = HashBcrypt::fromString('password');
         
-        self::assertMatchesRegularExpression('#^\$2y\$[0-9]{1,2}\$.{53}$#', (string)$hash);
+        self::assertMatchesRegularExpression('#^\$2y\$[0-9]{1,2}\$.{53}$#', $hash->toString());
     }
     
     

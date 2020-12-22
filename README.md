@@ -20,7 +20,7 @@ $ composer require mediagone/common-types
 
 ## List of available Value Objects
 
-All value objects implement a common `ValueObject` interface, `JsonSerializable` and `__toString` method. 
+All value objects implement a common `ValueObject` interface and `JsonSerializable`. 
 
 ### Crypto
 - `HashBcrypt`
