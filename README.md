@@ -23,6 +23,7 @@ $ composer require mediagone/common-types
 All value objects implement a common `ValueObject` interface and `JsonSerializable`. 
 
 ### Crypto
+- `Hash` (abstract class)
 - `HashBcrypt`
 
 ### System
