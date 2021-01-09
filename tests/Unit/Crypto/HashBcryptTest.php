@@ -22,12 +22,15 @@ final class HashBcryptTest extends TestCase
     {
         $hash = HashBcrypt::fromString('p4ssword');
         self::assertInstanceOf(HashBcrypt::class, $hash);
+        self::assertSame(HashBcrypt::DEFAULT_COST, $hash->getCost());
     }
+    
     
     public function test_can_be_created_from_valid_string_with_cost() : void
     {
-        $hash = HashBcrypt::fromString('p4ssword', ['cost' => 14]);
+        $hash = HashBcrypt::fromString('p4ssword', ['cost' => HashBcrypt::DEFAULT_COST - 1]);
         self::assertInstanceOf(HashBcrypt::class, $hash);
+        self::assertSame(HashBcrypt::DEFAULT_COST - 1, $hash->getCost());
     }
     
     

@@ -4,8 +4,10 @@ namespace Mediagone\Common\Types\Crypto;
 
 use InvalidArgumentException;
 use function is_string;
+use function password_get_info;
 use function password_hash;
 use function password_verify;
+use function preg_match;
 
 
 /**
@@ -103,6 +105,13 @@ final class HashBcrypt extends Hash
     public function verifyString(string $plainString) : bool
     {
         return password_verify($plainString, $this->hash);
+    }
+    
+    
+    public function getCost() : int
+    {
+        $infos = password_get_info($this->hash);
+        return (int)$infos['options']['cost'];
     }
     
     
