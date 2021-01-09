@@ -18,6 +18,8 @@ abstract class Hash implements ValueObject
         switch ($infos['algo']) {
             case '2y':
                 return HashBcrypt::fromHash($hash);
+            case 'argon2id':
+                return HashArgon2id::fromHash($hash);
         }
         
         throw new LogicException('This hash algorithm('.$infos['algo'].') is not supported.');
