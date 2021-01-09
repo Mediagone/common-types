@@ -80,7 +80,7 @@ final class HashBcrypt extends Hash
         $regex = '#^'
             . '\$2(a|y)\$' // hashing algorithm version (not supporting the $2$ version)
             . '[0-9]{2}\$' // cost parameter
-            . '[\./0-9a-zA-Z]{53}' // a 53 characters long base-64-encoded value (custom alphabet)
+            . '[\.\/0-9a-zA-Z]{53}' // a 53 characters long base-64-encoded value (custom alphabet)
             . '$#';
         
         return preg_match($regex, $hash) === 1;
