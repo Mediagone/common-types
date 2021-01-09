@@ -3,7 +3,6 @@
 namespace Mediagone\Common\Types\Crypto;
 
 use InvalidArgumentException;
-use Mediagone\Common\Types\ValueObject;
 use function is_string;
 use function password_hash;
 use function password_verify;
@@ -12,7 +11,7 @@ use function password_verify;
 /**
  * Represents a Bcrypt encrypted hash (version 2 not supported for security reasons).
  */
-final class HashBcrypt implements ValueObject
+final class HashBcrypt extends Hash
 {
     //========================================================================================================
     // Constants & Properties
