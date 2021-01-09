@@ -5,6 +5,8 @@ namespace Mediagone\Common\Types\Crypto;
 use InvalidArgumentException;
 use Mediagone\Common\Types\ValueObject;
 use function is_string;
+use function password_hash;
+use function password_verify;
 
 
 /**
@@ -96,6 +98,12 @@ final class HashBcrypt implements ValueObject
     public function toString() : string
     {
         return $this->hash;
+    }
+    
+    
+    public function verifyString(string $plainString) : bool
+    {
+        return password_verify($plainString, $this->hash);
     }
     
     

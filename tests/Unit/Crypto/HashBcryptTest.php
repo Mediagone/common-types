@@ -235,4 +235,23 @@ final class HashBcryptTest extends TestCase
     
     
     
+    //========================================================================================================
+    // Verify
+    //========================================================================================================
+    
+    public function test_can_verify_valid_password() : void
+    {
+        $hash = HashBcrypt::fromString('p4ssword');
+        self::assertTrue($hash->verifyString('p4ssword'));
+    }
+    
+    
+    public function test_can_verify_invalid_password() : void
+    {
+        $hash = HashBcrypt::fromString('p4ssword');
+        self::assertFalse($hash->verifyString('not-the-same'));
+    }
+    
+    
+    
 }
