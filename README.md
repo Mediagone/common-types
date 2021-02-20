@@ -9,7 +9,7 @@ Value Objects are small and **immutable** classes representing typed values usua
 That's why you should ALWAYS use Value Objects rather than primitive types.
 
 
-## Requirements
+## Installation
 This package requires **PHP 7.4+**
 
 Add it as Composer dependency:
@@ -37,6 +37,7 @@ All value objects implement a common `ValueObject` interface and `JsonSerializab
 - `Duration`
 
 ### Text
+- `Hex`
 - `Name`
 - `Slug`
 - `Text`
