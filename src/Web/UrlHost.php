@@ -104,7 +104,7 @@ final class UrlHost implements ValueObject
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->url;
     }

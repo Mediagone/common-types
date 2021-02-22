@@ -74,7 +74,7 @@ final class Text implements ValueObject
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->text;
     }

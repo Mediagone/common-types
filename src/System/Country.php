@@ -87,6 +87,12 @@ final class Country implements ValueObject
     }
     
     
+    public function __toString() : string
+    {
+        return $this->alpha3;
+    }
+    
+    
     public function getName() : string
     {
         return $this->name;

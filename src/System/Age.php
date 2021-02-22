@@ -71,6 +71,12 @@ final class Age implements ValueObject
     }
     
     
+    public function __toString() : string
+    {
+        return (string)$this->age;
+    }
+    
+    
     public function toInteger() : int
     {
         return $this->age;

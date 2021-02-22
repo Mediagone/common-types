@@ -502,12 +502,12 @@ final class DateTimeUTCTest extends TestCase
     // Conversion tests
     //========================================================================================================
     
-    public function test_can_be_converted_to_string() : void
+    public function test_can_be_cast_to_string() : void
     {
         $time = '2020-01-12T11:22:33+00:00';
         $utcDate = DateTimeUTC::fromFormat($time, DateTimeInterface::ATOM);
         
-        self::assertSame($time, $utcDate->toString());
+        self::assertSame($time, (string)$utcDate);
     }
     
     public function test_can_be_converted_to_timestamp() : void

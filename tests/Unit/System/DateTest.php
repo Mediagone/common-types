@@ -23,19 +23,19 @@ final class DateTest extends TestCase
     public function test_can_generate_today() : void
     {
         $now = new DateTime('today', new DateTimeZone('UTC'));
-        self::assertSame($now->format('Y-m-d'), Date::today()->toString());
+        self::assertSame($now->format('Y-m-d'), (string)Date::today());
     }
     
     public function test_can_generate_yesterday() : void
     {
         $now = new DateTime('yesterday', new DateTimeZone('UTC'));
-        self::assertSame($now->format('Y-m-d'), Date::yesterday()->toString());
+        self::assertSame($now->format('Y-m-d'), (string)Date::yesterday());
     }
     
     public function test_can_generate_tomorrow() : void
     {
         $now = new DateTime('tomorrow', new DateTimeZone('UTC'));
-        self::assertSame($now->format('Y-m-d'), Date::tomorrow()->toString());
+        self::assertSame($now->format('Y-m-d'), (string)Date::tomorrow());
     }
     
     
@@ -43,14 +43,14 @@ final class DateTest extends TestCase
     {
         $format = '2020-08-01';
         $date = new DateTime($format, new DateTimeZone('UTC'));
-        self::assertSame($format, Date::fromDateTime($date)->toString());
+        self::assertSame($format, (string)Date::fromDateTime($date));
     }
     
     
     public function test_can_be_created_from_string() : void
     {
         $formatDate = '2020-01-12';
-        self::assertSame($formatDate, Date::fromString($formatDate)->toString());
+        self::assertSame($formatDate, (string)Date::fromString($formatDate));
     }
     
     public function test_cannot_be_created_from_invalid_string() : void
@@ -90,7 +90,7 @@ final class DateTest extends TestCase
     public function test_can_be_created_from_values() : void
     {
         $utcDate = Date::fromValues(2020, 1, 2);
-        self::assertSame('2020-01-02', $utcDate->toString());
+        self::assertSame('2020-01-02', (string)$utcDate);
         
         foreach ([1,1000,2000,9999] as $year) {
             $utcDate = Date::fromValues($year, 1, 2);
@@ -285,7 +285,7 @@ final class DateTest extends TestCase
     
     public function test_can_be_converted_to_string() : void
     {
-        self::assertSame('2020-01-12', Date::fromString('2020-01-12')->toString());
+        self::assertSame('2020-01-12', (string)Date::fromString('2020-01-12'));
     }
     
     public function test_can_be_converted_to_timestamp() : void

@@ -201,10 +201,10 @@ final class UrlTest extends TestCase
     }
     
     
-    public function test_can_be_converted_to_string() : void
+    public function test_can_be_cast_to_string() : void
     {
         $slug = Url::fromString('http://domain.com');
-        self::assertSame('http://domain.com', $slug->toString());
+        self::assertSame('http://domain.com', (string)$slug);
     }
     
     

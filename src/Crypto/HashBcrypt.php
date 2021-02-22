@@ -96,7 +96,7 @@ final class HashBcrypt extends Hash
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->hash;
     }

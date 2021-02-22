@@ -133,7 +133,7 @@ final class HashArgon2idTest extends TestCase
         $value = '$argon2id$v=19$m=65536,t=4,p=1$MGU4dnY2Lkw2bHpmTzV5Wg$u7LBqzixVlVzvWTcbxHGpGTj6FyStwInN67cTGZBNXI';
         $hash = HashArgon2id::fromHash($value);
         
-        self::assertSame($value, $hash->toString());
+        self::assertSame($value, (string)$hash);
     }
     
     

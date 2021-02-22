@@ -75,7 +75,7 @@ final class TextTest extends TestCase
         $value = 'Lorem ipsum...';
         $name = Text::fromString($value);
         
-        self::assertSame($value, $name->toString());
+        self::assertSame($value, (string)$name);
     }
     
     

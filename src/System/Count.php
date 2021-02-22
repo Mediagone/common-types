@@ -71,6 +71,12 @@ final class Count implements ValueObject
     }
     
     
+    public function __toString() : string
+    {
+        return (string)$this->count;
+    }
+    
+    
     public function toInteger() : int
     {
         return $this->count;

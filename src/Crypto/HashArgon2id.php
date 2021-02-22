@@ -117,7 +117,7 @@ final class HashArgon2id extends Hash
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->hash;
     }

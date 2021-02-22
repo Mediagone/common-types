@@ -94,7 +94,7 @@ final class UrlPath implements ValueObject
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->path;
     }

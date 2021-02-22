@@ -51,6 +51,12 @@ final class CountTest extends TestCase
     }
     
     
+    public function test_can_be_cast_to_string() : void
+    {
+        self::assertSame('20', (string)Count::fromInt(20));
+    }
+    
+    
     public function test_can_be_cast_to_integer() : void
     {
         self::assertSame(20, Count::fromInt(20)->toInteger());

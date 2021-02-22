@@ -52,6 +52,13 @@ final class DurationTest extends TestCase
     }
     
     
+    public function test_can_be_cast_to_string() : void
+    {
+        $duration = Duration::fromSeconds(20);
+        self::assertSame('20', (string)$duration);
+    }
+    
+    
     public function test_can_be_cast_to_integer() : void
     {
         $duration = Duration::fromSeconds(20);

@@ -19,14 +19,14 @@ final class HashTest extends TestCase
     
     public function test_can_create_from_a_bcrypt_hash() : void
     {
-        $hash = HashBcrypt::fromString('p4ssword')->toString();
+        $hash = (string)HashBcrypt::fromString('p4ssword');
         self::assertInstanceOf(HashBcrypt::class, Hash::fromHash($hash));
     }
     
     
     public function test_can_create_from_a_argon2id_hash() : void
     {
-        $hash = HashArgon2id::fromString('p4ssword')->toString();
+        $hash = (string)HashArgon2id::fromString('p4ssword');
         self::assertInstanceOf(HashArgon2id::class, Hash::fromHash($hash));
     }
     

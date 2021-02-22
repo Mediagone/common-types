@@ -264,7 +264,7 @@ final class Date implements ValueObject
     }
     
     
-    public function toString() : string
+    public function __toString() : string
     {
         return $this->datetime->format('Y-m-d');
     }

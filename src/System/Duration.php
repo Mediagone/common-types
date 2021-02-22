@@ -100,6 +100,12 @@ final class Duration implements ValueObject
     }
     
     
+    public function __toString() : string
+    {
+        return (string)$this->duration;
+    }
+    
+    
     public function toSeconds() : int
     {
         return $this->duration;

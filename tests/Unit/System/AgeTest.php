@@ -52,6 +52,13 @@ final class AgeTest extends TestCase
     }
     
     
+    public function test_can_be_cast_to_string() : void
+    {
+        $age = Age::fromInt(20);
+        self::assertSame('20', (string)$age);
+    }
+    
+    
     public function test_can_be_cast_to_integer() : void
     {
         $age = Age::fromInt(20);

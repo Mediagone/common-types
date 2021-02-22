@@ -125,7 +125,7 @@ final class SlugTest extends TestCase
     {
         $value = 'valid-slug';
         $slug = Slug::fromString($value);
-        self::assertSame($value, $slug->toString());
+        self::assertSame($value, (string)$slug);
     }
     
     

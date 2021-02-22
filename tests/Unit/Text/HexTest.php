@@ -97,7 +97,7 @@ final class HexTest extends TestCase
     {
         $hex = Hex::fromBinary(hex2bin('dede64f400'));
         
-        self::assertSame('dede64f400', $hex->toString());
+        self::assertSame('dede64f400', (string)$hex);
     }
     
     
@@ -117,7 +117,7 @@ final class HexTest extends TestCase
     public function test_can_be_cast_to_string() : void
     {
         $value = 'dede64f400';
-        self::assertSame($value, Hex::fromString($value)->toString());
+        self::assertSame($value, (string)Hex::fromString($value));
     }
     
     
@@ -125,7 +125,7 @@ final class HexTest extends TestCase
     {
         $hex = Hex::fromString('dede64f400');
         
-        self::assertSame('dede64f400', $hex->toString());
+        self::assertSame('dede64f400', (string)$hex);
     }
     
     
@@ -152,7 +152,7 @@ final class HexTest extends TestCase
     public function test_is_lowercased() : void
     {
         $value = 'DEDE64F400';
-        self::assertSame(strtolower($value), Hex::fromString($value)->toString());
+        self::assertSame(strtolower($value), (string)Hex::fromString($value));
     }
     
     
