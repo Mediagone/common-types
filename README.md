@@ -27,10 +27,6 @@ All value objects implement a common `ValueObject` interface and `JsonSerializab
 - `HashBcrypt`
 - `HashArgon2id`
 
-### Crypto
-- `Hash`
-- `HashArgon2id`
-- `HashBcrypt`
 
 ### System
 - `Age`
